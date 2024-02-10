@@ -3,7 +3,7 @@ import './Todo.css'
 
 function Todo({ text, isDone, deleteTodo, editTodo, finishTodo }) {
     const [isEditing, setIsEditing] = useState(false);
-    const [todoText, setTodoText] = useState(text);
+    const [todoText, setTodoText] = useState(text || '');
 
     return (
         <div className="todo-item">
