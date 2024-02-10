@@ -2,23 +2,18 @@ import { useState } from 'react'
 import './App.css'
 import AddTodo from './components/AddTodo/AddTodo'
 import TodoList from './components/TodoList/TodoList'
+import TodoContext from './context/TodoContext'
 
 function App() {
     
-    const [todos, setTodos] = useState([
-        {id: 1, text: 'todo1', isDone: true},        
-        {id: 2, text: 'todo2', isDone: true}       
-    ])
-
-    function addTodos(todotxt){
-        let nextId = todos.length + 1;
-        setTodos([...todos, {id: nextId, isDone: false, text: todotxt}])
-    }
-
+    const [todos, setTodos] = useState([]);
+    
     return(
         <>
-            <AddTodo addTodos={addTodos} />
-            <TodoList todos={todos} setTodos={setTodos} />
+            <TodoContext.Provider value={{todos, setTodos}}>
+                <AddTodo />
+                <TodoList />
+            </TodoContext.Provider>
         </>
     )
 }

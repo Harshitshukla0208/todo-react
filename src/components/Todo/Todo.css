@@ -1,0 +1,23 @@
+.todo-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.todo-checkbox {
+    margin-right: 8px;
+}
+
+.todo-input {
+    flex: 1;
+    margin-right: 8px;
+}
+
+.todo-edit-btn, .todo-delete-btn {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.todo-text {
+    flex: 1;
+}
